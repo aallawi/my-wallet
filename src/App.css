@@ -1,38 +1,194 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=M+PLUS+1p:wght@100;300;400;500;700;800;900&family=Poppins:wght@700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.app {
+    width: 100%;
+    min-height: 100vh;
+    background: #feffdf;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+
+/* ================ header ================= */
+.header {
+    text-align: center; 
+}
+.my-wallet {
+    font-size: 24px;
+    font-weight: 700;
+    padding: 1rem 3rem;
+    color: #668ba4;
+}
+.remaining {
+    color: #4b4b4b;
+    padding-bottom: 3rem;
+}
+.remaining span{
+    font-size: 20px;
+    padding-left: 10px;
+    font-weight: 700;
+}
+.remaining span.positive{
+    color: #19941b;
+}
+.remaining span.negative{
+    color: #e46161;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+
+/* ================== input ============= */
+
+form .form_input{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+form .form_input input {
+    width: 100%;
+    outline: none;
+    border-radius: 14px;
+    border: 1px solid #e46161;
+    padding: 10px 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form .choose {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+form .choose .select {
+    flex: 2;
+    display: flex;
+    gap: 3rem; 
+}
+form .choose .select label {
+    display: flex;
+    align-items: center;
+}
+form .choose .select input{
+    width: 25px;
+    height: 25px;
+}
+form .choose .select span{
+    padding-left: 10px;
+}
+
+form .choose button {
+    flex: 1;
+    outline: none;
+    border: none;
+    width: fit-content;
+    padding: 10px 50px;
+    color: #feffdf;
+    background-color: rgb(255, 94, 79);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+
+/* ======================================================= */
+img {
+    max-width: 100%;
+    padding: 1rem 0;
+    height: 50px;
+    width: 100%;
+    object-fit: cover;
+}
+
+table {
+    width: 100%;
+}
+table thead {
+    background-color: #668ba4;
+}
+table tbody.expense {
+    background-color: #d4d4d4;
+}
+table tbody.income {
+    background-color: #baffbb;
+}
+table thead tr th{
+    padding: 10px;
+}
+table tbody tr td{
+    text-align: center;
+    padding: 6px 0;
+}
+table tbody tr td.del{
+    cursor: pointer;
+}
+table tbody tr td.del:hover{
+    background-color: red;
+}
+
+/* ======================= footer ================== */
+.copyright {
+    position: relative;
+    margin-top: 2rem;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%  );
+    text-align: center;
+    padding: 15px 0;
+    background-color: #e46161;
+    font-size: 14px;
+}
+.copyright a{
+    color: #d4d4d4;
+    padding: 0 4px;
+    text-decoration: none;
+}
+
+
+
+@media screen and (max-width : 500px) {
+    .container {
+        width: 90%;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0px;
+    }
+    .remaining {
+        padding-bottom: 1rem;
+    } 
+    form .form_input{
+        flex-direction: column;
+    }
+    form .form_input input {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+    table tbody tr td{
+        font-size: 12px;
+    }
+    form .choose {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    form .choose button{
+        width: 100%;
+    }
+    .copyright , .copyright a{
+        font-size: 10px;
+    }
 }
